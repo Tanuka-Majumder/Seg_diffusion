@@ -16,8 +16,9 @@ This project implements a segmentation-guided diffusion model for controllable b
 |-----------|---------|-------------|
 | `Seg_guided_diffusion_preprocessing.ipynb` | Preprocessing Pipeline | Notebook to generate segmentation masks using ants on the brain and convert the generated 3D volumes into 2D slices|
 | `Segmentation_U_Net_training.ipynb` | Segmentation Model Training | Trains the evaluation U-Net (Model 4) for predicting segmentation masks from generated images. Used for computing Dice scores during validation. |
-| `DL_project_training_piepline.ipynb` | Main Training Pipeline | Contains training loops for Model 2 and 3 diffusion models: (2) Seg-Guided Baseline, (3) Seg-Guided + MAT (full model)|
 | `MSML612_Project_Evaluation.ipynb` | Inference and evaluation model 1, 2 and 3 | Evaluation of models using different metrics such as FID, KID, SSIM, etc. The notebook also inferences the output|
+| `DL_project_training_pipeline_no_MAT.ipynb` | Training Script for model 2 (Seg-Guided diffusion)| Contains training loop for model 2 |
+| `DL_project_training_piepline-2.ipynb` | Training Script for model 3 (Seg-Guided diffusion + MAT (full model))| contains training loop for model 3 |
 ---
 
 ## Model Architecture
@@ -96,15 +97,11 @@ pip install jupyter notebook
 | **DiffMapIoU** (Difference Map IoU) | 0.0228 | 0.1524 | **0.157** | **Locality of Change:** Confirms that edits (differences between original and generated images) are confined to the intended pathological region. **Higher is better.** | Threshold the absolute difference map (Original - Generated) and compute the IoU with the ground-truth tumor mask to verify the edit is **localized**. |
 
 ### Running Evaluation
-```python
-# Inside DL_project_training_piepline.ipynb
-evaluate_model(model, test_loader, seg_unet)
-# Outputs: Dice, SSIM, IoU metrics + visualizations
-```
+- Evaluation of the model can be done using the script `MSML612_Project_Evaluation.ipynb` to run the evaluation on model 1, 2, 3 and using the model 4 as well.
 
 ---
 
-## 🔬 Experimental Workflow
+## Experimental Workflow
 
 ```
 ┌─────────────────────────────────────┐
