@@ -17,9 +17,9 @@ This project implements a segmentation-guided diffusion model for controllable b
 | `Seg_guided_diffusion_preprocessing.ipynb` | Preprocessing Pipeline | Notebook to generate segmentation masks using ants on the brain and convert the generated 3D volumes into 2D slices|
 | `Segmentation_U_Net_training.ipynb` | Segmentation Model Training | Trains the evaluation U-Net (Model 4) for predicting segmentation masks from generated images. Used for computing Dice scores during validation. |
 | `MSML612_Project_Evaluation.ipynb` | Inference and evaluation model 1, 2 and 3 | Evaluation of models using different metrics such as FID, KID, SSIM, etc. The notebook also inferences the output|
-| `MSML612_Project_Model1.ipynb` | Training script for model 1 | Sanity check our diffusion pipeline and pre processing was correct|
+| `MSML612_Project_Model1.ipynb` | Training script for model 1 | Sanity check our diffusion pipeline and preprocessing was correct|
 | `DL_project_training_pipeline_no_MAT.ipynb` | Training Script for model 2 (Seg-Guided diffusion)| Contains training loop for model 2 |
-| `DL_project_training_piepline-2.ipynb` | Training Script for model 3 (Seg-Guided diffusion + MAT (full model))| contains training loop for model 3 |
+| `DL_project_training_pipeline.ipynb` | Training Script for model 3 (Seg-Guided diffusion + MAT (full model))| Contains training loop for model 3 |
 ---
 
 ## Model Architecture
