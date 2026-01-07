@@ -89,7 +89,7 @@ CUDA-compatible GPU (recommended)
 ### Installation
 ```bash
 # Clone repository
-git clone git@github.com:PranavShashidhara/Seg_diffusion.git
+git clone https://github.com/Tanuka-Majumder/Seg_diffusion.git
 cd Seg_diffusion
 
 # Create virtual environment
